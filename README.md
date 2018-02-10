@@ -1,5 +1,7 @@
 # docker-cplex
 
+IBM ILOG CPLEX deployment with Docker. The [demo Java code](src/HelloCplex.java) to use the CPLEX through Concert API Technology. This will end up the embedding use on CPLEX runtime component.
+
 ### On Local Development
 
 - Download and install [IBM ILOG CPLEX Studio](https://www.ibm.com/au-en/marketplace/ibm-ilog-cplex/purchase#product-header-top)
