@@ -73,7 +73,13 @@ Dual of cons03: 0.0014999999999999996
     ls -l
     ls -l /opt/ibm/ILOG/CPLEX_Studio128/
     ls -l /opt/ibm/ILOG/CPLEX_Studio128/cplex/lib/
-    ls -l /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/    
+    ls -l /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/
+    
+    java -Djava.library.path=/opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux -cp .:/opt/ibm/ILOG/CPLEX_Studio128/cplex/lib/cplex.jar HelloCplex
+    
+    CTRL+C to terminate
+    
+    exit
     ```
 
 - To stop the running container:
