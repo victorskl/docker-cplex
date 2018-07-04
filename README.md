@@ -1,6 +1,6 @@
 # docker-cplex
 
-IBM ILOG CPLEX deployment with Docker. The [demo Java code](src/HelloCplex.java) to use the CPLEX through Concert API Technology. This will end up the embedding use on CPLEX runtime component.
+IBM ILOG CPLEX deployment with Docker. The [demo Java code](src/HelloCplex.java) to use the CPLEX through [Concert API Technology](https://www.ibm.com/support/knowledgecenter/en/SSSA5P_12.8.0/ilog.odms.cplex.help/CPLEX/UsrMan/topics/APIs/Java/06_modeling_title_synopsis.html). This will end up the embedding use on CPLEX runtime component.
 
 ### On Local Development
 
@@ -47,9 +47,41 @@ Dual of cons03: 0.0014999999999999996
 
 ### On Docker Deployment
 
-- In [`Dockerfile`](Dockerfile), we will be using [JRE-8](https://hub.docker.com/_/openjdk/) __ONLY__.
+#### Build CPLEX JRE Docker Image
 
-- The container image will be Debian base; therefore copy the downloaded CPLEX Linux installer `cplex_studio128.linux-x86-64.bin` to the same location with `Dockerfile`.
+- The docker container image will be Debian based [openjdk:8-jre](https://hub.docker.com/_/openjdk/).
+
+- Copy the downloaded CPLEX Linux installer `cplex_studio128.linux-x86-64.bin` to the same location with `cplex/Dockerfile`.
+
+  ```
+  tree cplex
+  cplex
+  ├── Dockerfile
+  ├── cplex_studio128.linux-x86-64.bin
+  └── response.properties  
+  ```
+
+- Build the image:
+  
+  ```
+  cd cplex
+  docker image build -t cplex:12.8 -t cplex:12.8.0 .
+  docker images|grep cplex
+  cplex    12.8       3b473e7d9ec3        About a minute ago   3.43GB
+  cplex    12.8.0     3b473e7d9ec3        About a minute ago   3.43GB
+  ```
+
+- _(Optional)_ Publish to private docker image registry:
+
+  ```
+  docker tag cplex:12.8 docker-image-registry.com/namespace/cplex:12.8
+  docker tag cplex:12.8.0 docker-image-registry.com/namespace/cplex:12.8.0
+  
+  docker push docker-image-registry.com/namespace/cplex:12.8
+  docker push docker-image-registry.com/namespace/cplex:12.8.0
+  ```
+
+#### Build Sample Java App
 
 - Make sure to compile the `HelloCplex.java`. This is on macOS. Otherwise adjust the classpath.
     ```
@@ -97,4 +129,3 @@ Dual of cons03: 0.0014999999999999996
     docker rmi dev_tusk
     ```
 
-- EoF
