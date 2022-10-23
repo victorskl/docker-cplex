@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Lin"
+  given-names: "Victor San Kho"
+  orcid: "https://orcid.org/0000-0002-3940-4729"
+title: "docker-cplex - IBM ILOG CPLEX deployment with Docker"
+version: v201807
+doi: 10.5281/zenodo.7240468
+date-released: 2022-10-23
+url: "https://github.com/victorskl/docker-cplex"

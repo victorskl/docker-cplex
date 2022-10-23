@@ -1,5 +1,7 @@
 # docker-cplex
 
+[![DOI](https://zenodo.org/badge/121027722.svg)](https://zenodo.org/badge/latestdoi/121027722)
+
 IBM ILOG CPLEX deployment with Docker. The [demo Java code](src/HelloCplex.java) to use the CPLEX through [Concert API Technology](https://www.ibm.com/support/knowledgecenter/en/SSSA5P_12.8.0/ilog.odms.cplex.help/CPLEX/UsrMan/topics/APIs/Java/06_modeling_title_synopsis.html). This will end up the embedding use on CPLEX runtime component.
 
 ### On Local Development
